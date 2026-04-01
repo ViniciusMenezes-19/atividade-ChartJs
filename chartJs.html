@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body{display: flex;
+          background-color: rgb(255, 255, 255);
+      }
+
+      .graficos{
+        width: 45vw;
+        height: 45vh;
+      }
+
+    </style>
+</head>
+
+<body>
+    <div class="graficos">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="graficos">
+        <canvas id="myChart2"></canvas>
+    </div>
+
+</body>
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['TI', 'Arq.Comp', 'Banco de dados', 'Algoritimos', 'Introdução SO',],
+      datasets: [{
+        label: 'Nível de aprendizado Sprint1',
+        data: [70, 65, 70, 85, 60,],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+</script>
+
+<script>
+  const ctxs = document.getElementById('myChart2');
+
+  new Chart(ctxs, {
+    type: 'line',
+    data: {
+      labels: ['TI', 'Arq.Comp', 'Banco de dados', 'Algoritimos', 'Introdução SO',],
+      datasets: [{
+        label: 'Notas da Sprint1',
+        data: [2.7, 2.6, 2.5, 2.6, 2.7,],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+</html>
